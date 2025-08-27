@@ -18,6 +18,11 @@ document.getElementById('emergency-number-container').addEventListener('click', 
             alert('You have not suficient balance, you must minimum 20 coin');
             return;
         }
+        const data = {
+            time : new Date().toLocaleTimeString(),
+        }
+        timeData.push(data);
+        
         const callHistoryContainer = document.getElementById('call-history-container');
         const div = document.createElement('div');
         div.innerHTML = `
@@ -27,15 +32,13 @@ document.getElementById('emergency-number-container').addEventListener('click', 
                             <h3 class="text-[#111111] font-bold md:text-2xl text-xl">${cardTitle}</h3>
                             <p class="text-[#5c5c5c] font-normal text-lg">${cardNumber}</p>
                         </div>
-                        <p class="text-[#111111] font-normal text-lg">11:36:58 AM</p>
+                        <p class="text-[#111111] font-normal text-lg">${data.time}</p>
                     </div>
         
         `
         callHistoryContainer.appendChild(div);
-        const data = {
-            time : new Date().toLocaleTimeString(),
-        }
-        timeData.push(data);
+        
 
     }
+    
 })
