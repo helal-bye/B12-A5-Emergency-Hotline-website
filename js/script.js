@@ -40,5 +40,12 @@ document.getElementById('emergency-number-container').addEventListener('click', 
         
 
     }
-    
+
+    if(event.target.className.includes('copy-btn')){
+        const cardNumber = event.target.parentNode.parentNode.childNodes[7].innerText;
+        alert("Number is copied "+cardNumber);
+        const copyCount = document.getElementById('copy-count').innerText;
+        const copyTotal = Number(copyCount) + 1;
+        document.getElementById('copy-count').innerText = copyTotal;
+    }
 })
