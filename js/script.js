@@ -17,11 +17,11 @@ document
       alert("Calling " + cardTitle + " " + cardNumber);
       const coinCount = document.getElementById("coin-count").innerText;
       const coinTotal = coinCount - 20;
-      document.getElementById("coin-count").innerText = coinTotal;
-      if (coinTotal < 0) {
+      if (coinTotal < 20) {
         alert("You have not suficient balance, you must have minimum 20 coin");
         return;
       }
+      document.getElementById("coin-count").innerText = coinTotal;
       const data = {
         time: new Date().toLocaleTimeString(),
       };
