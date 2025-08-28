@@ -16,8 +16,8 @@ document
         event.target.parentNode.parentNode.childNodes[7].innerText;
         const coinCount = document.getElementById("coin-count").innerText;
         const coinTotal = coinCount - 20;
-        if (coinTotal < 0) {
-          alert("You have not suficient balance, you must have minimum 20 coin");
+        if (coinTotal < 20) {
+          alert("You have not suficient balance");
           return;
         }
         alert("Calling " + cardTitle + " " + cardNumber);
