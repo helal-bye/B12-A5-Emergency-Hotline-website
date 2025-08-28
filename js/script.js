@@ -14,13 +14,13 @@ document
         event.target.parentNode.parentNode.childNodes[3].innerText;
       const cardNumber =
         event.target.parentNode.parentNode.childNodes[7].innerText;
-      alert("Calling " + cardTitle + " " + cardNumber);
-      const coinCount = document.getElementById("coin-count").innerText;
-      const coinTotal = coinCount - 20;
-      if (coinTotal < 20) {
-        alert("You have not suficient balance, you must have minimum 20 coin");
-        return;
-      }
+        const coinCount = document.getElementById("coin-count").innerText;
+        const coinTotal = coinCount - 20;
+        if (coinTotal < 0) {
+          alert("You have not suficient balance, you must have minimum 20 coin");
+          return;
+        }
+        alert("Calling " + cardTitle + " " + cardNumber);
       document.getElementById("coin-count").innerText = coinTotal;
       const data = {
         time: new Date().toLocaleTimeString(),
